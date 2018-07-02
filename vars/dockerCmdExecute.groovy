@@ -1,7 +1,8 @@
+import jenkins.model.*
 
 def call(Map parameters = [:]) {
 
-	def stepName = 'dockerExecute'
+	def stepName = 'dockerCmdExecute'
 
 	echo "[${stepName}] entry point:  : Parameters: ${parameters} "
 
@@ -23,6 +24,7 @@ def call(Map parameters = [:]) {
 				executeMavenCommandWithinDockerContainer(stepName, parameters)
 
 				echo "[${stepName}] Maven command execution within docker container fully successful"
+				
 			} catch (error) {
 
 				echo "[${stepName}] Error occured while executing maven command within docker container. Existing : ${error}"
