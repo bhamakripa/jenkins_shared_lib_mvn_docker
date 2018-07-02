@@ -1,4 +1,4 @@
-import jenkins.model.*
+
 
 def call(Map parameters = [:]) {
 
