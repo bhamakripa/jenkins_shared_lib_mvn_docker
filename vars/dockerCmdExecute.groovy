@@ -1,5 +1,3 @@
-
-
 def call(Map parameters = [:]) {
 
 	def stepName = 'dockerCmdExecute'
@@ -19,7 +17,7 @@ def call(Map parameters = [:]) {
 
 				String dockerImageVersion = getDockerImageVersion(stepName, parameters)
 
-				pullDockerImageIfNeeded(stepName, dockerImageVersion)
+				pullDockerImageIfNeeded(stepName, dockerImageVersion, parameters)
 
 				executeMavenCommandWithinDockerContainer(stepName, parameters)
 
@@ -66,7 +64,7 @@ private getDockerImageVersion(stepName, parameters){
 	return dockerImageVersion;
 }
 
-private pullDockerImageIfNeeded(stepName, dockerImageVersion){
+private pullDockerImageIfNeeded(stepName, dockerImageVersion, parameters){
 	int dockerImageCount = sh(script: "docker images | grep ${dockerImageVersion} | grep maven | wc -l", returnStdout: true, returnStatus: false).trim().toInteger()
 	echo "[${stepName}]  dockerImageCount : ${dockerImageCount}"
 
