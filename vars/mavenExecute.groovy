@@ -15,7 +15,7 @@ def call(Map inputBuildParameters = [:]) {
 
 		echo "mavenExecute : final command : ${mavenCommand}"
 
-		dockerExecute(dockerImage: dockerImage, mavenCommand: mavenCommand)
+		dockerCmdExecute(dockerImage: dockerImage, mavenCommand: mavenCommand)
 	}
 }
 
