@@ -1,6 +1,6 @@
 def call(Map inputBuildParameters = [:]) {
 
-	handlePipelineStepErrors(stepName: 'mavenExecute', stepParameters: inputBuildParameters) {
+	handleErrors(stepName: 'mavenExecute', stepParameters: inputBuildParameters) {
 
 		Set stepGlobalConfigKeys = ['dockerImage', 'globalSettingsFile', 'projectSettingsFile', 'pomPath', 'm2Path']
 

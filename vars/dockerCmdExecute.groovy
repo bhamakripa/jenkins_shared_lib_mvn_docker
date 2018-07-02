@@ -5,7 +5,7 @@ def call(Map parameters = [:]) {
 
 	echo "[${stepName}] entry point:  : Parameters: ${parameters} "
 
-	handlePipelineStepErrors(stepName: stepName, stepParameters: parameters){
+	handleErrors(stepName: stepName, stepParameters: parameters){
 
 		def dockerImage = parameters.dockerImage ?: ''
 

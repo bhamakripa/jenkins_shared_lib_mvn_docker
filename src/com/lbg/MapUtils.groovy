@@ -1,4 +1,4 @@
-package com.lbg
+package com.lbg;
 
 class MapUtils implements Serializable {
 
