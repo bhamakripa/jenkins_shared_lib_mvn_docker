@@ -1,0 +1,5 @@
+dockerImage: 'maven:3.5-jdk-7'
+globalSettingsFile: ''
+projectSettingsFile: ''
+pomPath: ''
+m2Path: ''
